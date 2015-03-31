@@ -31,14 +31,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-        if (window.cordova) {
-
-            document.addEventListener('deviceready', this.onDeviceReady, false);
-        } else {
-            angular.bootstrap(document, ['blogSample']);
-            
-        }
+        document.addEventListener('deviceready', this.onDeviceReady, false);   
     },
     // deviceready Event Handler
     //
@@ -61,8 +54,6 @@ var app = {
     onErr: function(error)
     {
         alert('Unable to get your location. Without location you will not be able to use navigate feature! Error:' + '\n' + error.message);
-        blogSample.latitude = 0;
-        blogSample.longitude = 0;
     },
 
     onSuccess: function(position)
